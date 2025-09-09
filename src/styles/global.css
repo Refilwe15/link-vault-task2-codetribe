@@ -3,30 +3,28 @@ body{
     padding : 0;
     margin : 0;
     font-family:  Arial, Helvetica, sans-serif;
-    
-    
-
 }
+
 .container{
     display : flex;
- 
     padding: 60px 100px 100px 100px;
     justify-content: center;
     align-items: center;
-width: 75%;
-margin: 0 auto;
+    width: 75%;
+    margin: 0 auto;
 }
 
 .left{
     background-color:white;
     display : flex;
     flex-direction: column;
-        justify-content: center;
+    justify-content: center;
     text-align: center;
     height : 78vh;
     width: 50%;
     border-radius: 10px 0 0 10px;
 }
+
 .right{
     display: flex;
     background-color: white;
@@ -36,33 +34,36 @@ margin: 0 auto;
     margin-left: auto;
     border-radius:0 10px 10px 0;
 }
+
 .left h1{
     text-align: center;
     font-family : Arial, Helvetica, sans-serif;
 }
+
 .left img{
     height : 70vh;
     width : 70vh;
-
-
 }
+
 .box{
      margin : auto;
      padding : 10px;
-     
-
 }
+
 header{
     text-align: center;
     padding : 10px;
 }
+
 header p{
     font-family: Arial, Helvetica, sans-serif;
 }
+
 header h1{
     color : purple;
     font-family : Arial, Helvetica, sans-serif;
 }
+
 .boxs{
     margin: auto;
 }
@@ -70,7 +71,7 @@ header h1{
 .inputs{
     height : 4vh;
     width : 500px;
-     display : flex; 
+    display : flex; 
     margin-bottom: 0;
     border-radius: 10px ;
     border : 5px gray;
@@ -81,19 +82,20 @@ header h1{
 
 .login-btn {
     display: flex;
-
     justify-content: center;
     align-items: center;
-
 }
+
 .icon{
     height : 10vh;
 }
+
 .labels{
     padding-right : 10px;
     font-size: small;
-   font-family : 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    font-family : 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
+
 .login-btn  button{
     height : 5vh;
     width : 545px;
@@ -101,9 +103,8 @@ header h1{
     border-radius: 5px;
     color : white ;
     padding : 10px;
-    
-    
 }
+
 .google  button{
     height : 5vh;
     width : 545px;
@@ -111,9 +112,6 @@ header h1{
     border-radius: 5px;
     margin-left: 18px;
     margin-top: 15px;
-
-    
-    
 }
 
 .create-link{
@@ -127,7 +125,6 @@ header h1{
   width: 100%;
 }
 
-
 .input-icon {
   position: absolute;
   left: 20px;
@@ -137,30 +134,57 @@ header h1{
   pointer-events: none; 
 }
 
-
 .inputs.icon2 {
   padding-left: 35px;
 }
+
 .whatsApp{
     color : rgb(20, 100, 20);
     height : 10vh;
     width : 40px;
 }
+
 .instagram{
     color : purple;
     width : 40px;
     height : 10vh;
 }
+
 .gl{
     color : purple;
     width : 30px;
 }
+
 .checkbox{
     display: flex;
 }
+
 .checkbox p{
     margin-left: 10px;
 }
+
 .checkbox input{
     margin-left: 12px;
+}
+
+/* sign up page */
+
+.head{
+    text-align: center;
+    font-weight: bold;
+    font-size : 20px;
+    margin-top: 50px;
+}
+
+.sign-btn {
+    margin-top: 20px;                                
+}
+
+.sign-btn button{
+    height : 5vh;
+    width : 545px;
+    background-color: blueviolet;
+    border-radius: 5px;
+    color : white ;
+    padding : 10px;
 }

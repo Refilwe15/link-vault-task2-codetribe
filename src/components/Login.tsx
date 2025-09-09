@@ -3,6 +3,9 @@ import icon from '../assets/profile.png';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser, faLock } from "@fortawesome/free-solid-svg-icons";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons"; 
+import{Link} from "react-router-dom";
+
+
 
 interface Props {
     label: string,
@@ -56,6 +59,8 @@ const Form: React.FC<Props> = ({ label, placeholder }) => {
                             </div>
                             <div className='checkbox'>
                                 <input type="checkbox" ></input> <p>Do you remember me ?</p>
+                                
+
                             </div>
                         </div>
 
@@ -73,7 +78,7 @@ const Form: React.FC<Props> = ({ label, placeholder }) => {
 
                         {/* Link for creating account */}
                         <div className='create-link'>
-                            <p>Don't have account ? click <a href='../components/Login.tsx'>here</a></p>
+                            <p>Don't have account ? click <Link to="Signup">here</Link></p>
                         </div>
 
                     </div>
