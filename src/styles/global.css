@@ -60,7 +60,7 @@ header p{
 }
 
 header h1{
-    color : purple;
+    color : rgb(114, 97, 114);
     font-family : Arial, Helvetica, sans-serif;
 }
 
@@ -93,14 +93,16 @@ header h1{
 .labels{
     padding-right : 10px;
     font-size: small;
+    color : rgb(114, 97, 114);
     font-family : 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
 
 .login-btn  button{
     height : 5vh;
     width : 545px;
-    background-color: blueviolet;
+    background-color: rgb(115, 95, 134);
     border-radius: 5px;
+    border : gray;
     color : white ;
     padding : 10px;
 }
@@ -108,7 +110,8 @@ header h1{
 .google  button{
     height : 5vh;
     width : 545px;
-    background-color: white;
+    background-color: rgb(187, 176, 184);
+    border : gray;
     border-radius: 5px;
     margin-left: 18px;
     margin-top: 15px;
@@ -172,19 +175,28 @@ header h1{
 .head{
     text-align: center;
     font-weight: bold;
-    font-size : 20px;
+    font-size : 30px;
     margin-top: 50px;
+    color : rgb(114, 97, 114);
 }
 
 .sign-btn {
-    margin-top: 20px;                                
+    margin-top: 20px;  
+    display : flex;
+    justify-content: center;
+    align-content: center;                              
 }
 
 .sign-btn button{
+    
     height : 5vh;
     width : 545px;
-    background-color: blueviolet;
+    background-color: rgb(115, 95, 134);
+    border : gray;
     border-radius: 5px;
     color : white ;
     padding : 10px;
+}
+button:hover{
+  background-color: rgb(65, 42, 87);
 }

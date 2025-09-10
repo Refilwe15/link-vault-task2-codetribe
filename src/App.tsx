@@ -4,6 +4,7 @@ import Form from './components/Login.tsx'
 import './styles/global.css'
 import {Route,Routes} from "react-router-dom";
 import Signup from './components/Signup.tsx';
+import View from './components/ViewLinks.tsx'
 
 
 
@@ -19,7 +20,12 @@ function App() {
      />
      <Route
      path = "Signup"
-     element = {<Signup />}
+     element = {<Signup placeholder={''} input={''} />}
+     />
+
+    <Route
+     path = "ViewLinks"
+     element = {<View />}
      />
 
      </Routes> 
