@@ -1,16 +1,29 @@
 import Logo from "../assets/profile.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faLock } from "@fortawesome/free-solid-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom";
+import { faUser, faLock, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { Link, useNavigate } from "react-router-dom";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
+import { useState } from "react";
 
-interface Props {
-  placeholder: string;
-  input: string;
-}
+const Signup = () => {
+  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
-const Signup: React.FC<Props> = ({ placeholder, input }) => {
+  const handleSignup = () => {
+    if (!email || !username || !password) {
+      alert("Please fill in all fields");
+      return;
+    }
+
+    const user = { email, username, password };
+    localStorage.setItem("user", JSON.stringify(user)); // save to localStorage
+    alert("Account created successfully!");
+
+    navigate("/ViewLinks"); // redirect after signup
+  };
+
   return (
     <div className="container">
       <div className="left">
@@ -19,7 +32,7 @@ const Signup: React.FC<Props> = ({ placeholder, input }) => {
       <div className="right">
         <div className="head">Create account</div>
         <div className="boxs">
-          {/* password input */}
+          {/* Email */}
           <div className="box">
             <label className="labels">EMAIL :</label>
             <div className="input-container">
@@ -28,12 +41,13 @@ const Signup: React.FC<Props> = ({ placeholder, input }) => {
                 className="inputs icon2"
                 type="email"
                 placeholder="Enter email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
           </div>
 
-          {/* username input */}
-          <div>
+          {/* Username */}
           <div className="box">
             <label className="labels">USERNAME :</label>
             <div className="input-container">
@@ -41,12 +55,14 @@ const Signup: React.FC<Props> = ({ placeholder, input }) => {
               <input
                 className="inputs icon2"
                 type="text"
-                placeholder={(placeholder = "Enter username")}
-                value={input}
+                placeholder="Enter username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
               />
             </div>
           </div>
-          {/* password input */}
+
+          {/* Password */}
           <div className="box">
             <label className="labels">PASSWORD :</label>
             <div className="input-container">
@@ -55,23 +71,30 @@ const Signup: React.FC<Props> = ({ placeholder, input }) => {
                 className="inputs icon2"
                 type="password"
                 placeholder="Enter password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
           </div>
-        </div>
 
-        {/* login button */}
-<div className='google'>
-  <Link to="/ViewLinks" className='google-link'>
-    <button className='google-button'>
-      <FontAwesomeIcon icon={faGoogle} className='gl' /> Sign in with Google
-    </button>
-  </Link>
-</div>
+          {/* Signup Button */}
+          <div className="login-btn">
+            <button onClick={handleSignup}>Sign Up</button>
+          </div>
 
+          {/* Google button (placeholder) */}
+          <div className="google">
+            <Link to="/ViewLinks" className="google-link">
+              <button className="google-button">
+                <FontAwesomeIcon icon={faGoogle} className="gl" /> Sign in with
+                Google
+              </button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
   );
 };
+
 export default Signup;
