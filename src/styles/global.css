@@ -101,7 +101,7 @@ header h1{
 
 .login-btn  button{
     height : 5vh;
-    width : 590px;
+    width : 540px;
     background-color: rgb(115, 95, 134);
     border-radius: 5px;
     border : gray;
@@ -588,11 +588,10 @@ button:hover{
   transform: translateY(-2px);
 }
 
-/* heart styling: use filled when favourite */
-.heart-btn svg { font-size: 18px; }
-.icon-btn .fa-heart {}
 
-/* floating add button center bottom */
+.heart-btn svg { font-size: 18px; }
+
+
 .floating-add {
   position: fixed;
   left: 50%;
@@ -670,7 +669,7 @@ button:hover{
   resize: none;
 }
 
-/* checkbox row */
+
 .fav-row {
   margin-top: 12px;
   display: flex;
@@ -679,7 +678,7 @@ button:hover{
   font-size: 15px;
 }
 
-/* actions */
+
 .popup-actions {
   display: flex;
   gap: 18px;
@@ -708,14 +707,20 @@ button:hover{
   font-weight: 600;
 }
 
-/* small helper text */
+
+.no-links {
+  text-align: center;
+  color: #777;
+  padding: 28px 0;
+
+}
 .no-links {
   text-align: center;
   color: #777;
   padding: 28px 0;
 }
 
-/* Responsive */
+
 @media (max-width: 1289px) {
   .link-card { flex-direction: column; align-items:flex-start; gap:12px; padding:16px; }
   .link-left { width: 100%; }
