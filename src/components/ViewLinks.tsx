@@ -17,13 +17,14 @@ interface LinkItem {
 }
 
 // Default Shein card
+
 const defaultLinks: LinkItem[] = [
   {
     id: 1,
     title: "Shein",
     url: "https://www.shein.com",
     description:
-      "Trendy fashion and lifestyle e-commerce store offering affordable clothing and accessories.",
+      "Trendy Fashion and Style..",
     favourite: false,
   },
 ];
