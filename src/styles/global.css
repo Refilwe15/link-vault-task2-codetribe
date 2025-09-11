@@ -5,15 +5,16 @@ body{
     font-family:  Arial, Helvetica, sans-serif;
 }
 
-.container{
-    display : flex;
-    padding: 60px 100px 100px 100px;
-    justify-content: center;
-    align-items: center;
-    height : 100vh;
-    width: 75%;
-    margin: 0 auto;
+.container {
+  display: flex;
+  padding: 60px 100px 100px 100px;
+  justify-content: center;
+  align-items: center;
+  min-height: 110px;  
+  width: 80%;
+  margin: 0 auto;
 }
+
 
 .left{
     background-color:white;
@@ -21,7 +22,7 @@ body{
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    height : 78vh;
+    height : 95vh;
     width: 50%;
     border-radius: 10px 0 0 10px;
 }
@@ -30,7 +31,7 @@ body{
     display: flex;
     background-color: white;
     flex-direction: column;
-    height : 78vh;
+    height : 95vh;
     width: 50%;
     margin-left: auto;
     border-radius:0 10px 10px 0;
@@ -100,7 +101,7 @@ header h1{
 
 .login-btn  button{
     height : 5vh;
-    width : 545px;
+    width : 590px;
     background-color: rgb(115, 95, 134);
     border-radius: 5px;
     border : gray;
@@ -204,7 +205,7 @@ button:hover{
 /* --- Responsiveness for laptops --- */
 
 /* Large laptops (≤1366px) */
-@media screen and (max-width: 1366px) {
+@media screen and (max-width: 250px) {
   .container {
     width: 90%;
     padding: 40px 20px;
@@ -244,10 +245,9 @@ button:hover{
   }
 }
 
-/* Small laptops (≤1024px) */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 250px) {
   .container {
-    flex-direction: column; /* stack left and right */
+    flex-direction: column; 
     width: 95%;
     padding: 20px;
   }
@@ -263,7 +263,7 @@ button:hover{
   .login-btn button,
   .google button,
   .sign-btn button {
-    max-width: 100%; /* take full width */
+    max-width: 100%; 
   }
 
   .left img {
@@ -355,7 +355,7 @@ button:hover{
   background-color: rgb(65, 42, 87);
 }
 
-/* Popup form */
+
 .popup {
   position: fixed;
   top: 50%;
@@ -421,7 +421,7 @@ button:hover{
   background-color: rgb(65, 42, 87);
 }
 
-/* Overlay */
+
 .popup::before {
   content: "";
   position: fixed;
@@ -433,7 +433,7 @@ button:hover{
   z-index: -1;
 }
 
-/* Responsive */
+
 @media screen and (max-width: 768px) {
   .view-container {
     padding: 20px;
@@ -459,12 +459,12 @@ button:hover{
     width: 95%;
   }
 }
-/* ===== View / Cards (mimic prototype) ===== */
+
 
 .view-wrapper {
   min-height: 100vh;
   background: transparent;
-  padding: 40px 60px 120px; /* leave room for floating button */
+  padding: 40px 60px 120px; 
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -716,7 +716,7 @@ button:hover{
 }
 
 /* Responsive */
-@media (max-width: 720px) {
+@media (max-width: 1289px) {
   .link-card { flex-direction: column; align-items:flex-start; gap:12px; padding:16px; }
   .link-left { width: 100%; }
   .link-right { width: 100%; flex-direction:row; justify-content:space-between; gap:10px; }
