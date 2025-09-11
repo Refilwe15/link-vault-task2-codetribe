@@ -17,14 +17,12 @@ interface LinkItem {
 }
 
 // Default Shein card
-
 const defaultLinks: LinkItem[] = [
   {
     id: 1,
     title: "Shein",
     url: "https://www.shein.com",
-    description:
-      "Trendy Fashion and Style..",
+    description: "Trendy Fashion and Style..",
     favourite: false,
   },
 ];
@@ -39,6 +37,7 @@ function View() {
     description: "",
     favourite: false,
   });
+  const [editingId, setEditingId] = useState<number | null>(null);
 
   // Load saved links
   useEffect(() => {
@@ -72,7 +71,19 @@ function View() {
       return;
     }
 
-    setLinks((prev) => [...prev, { ...formData, id: Date.now() }]);
+    if (editingId) {
+      // Update existing link
+      setLinks((prev) =>
+        prev.map((item) =>
+          item.id === editingId ? { ...formData, id: editingId } : item
+        )
+      );
+    } else {
+      // Add new link
+      setLinks((prev) => [...prev, { ...formData, id: Date.now() }]);
+    }
+
+    // Reset form
     setFormData({
       id: Date.now(),
       title: "",
@@ -80,6 +91,7 @@ function View() {
       description: "",
       favourite: false,
     });
+    setEditingId(null);
     setShowForm(false);
   };
 
@@ -93,6 +105,12 @@ function View() {
         item.id === id ? { ...item, favourite: !item.favourite } : item
       )
     );
+  };
+
+  const handleEdit = (item: LinkItem) => {
+    setFormData(item); // Pre-fill form with selected item
+    setEditingId(item.id);
+    setShowForm(true);
   };
 
   return (
@@ -121,7 +139,10 @@ function View() {
                         <FontAwesomeIcon icon={faExternalLinkAlt} /> Open
                       </button>
                     </a>
-                    <button className="pill-btn outline">
+                    <button
+                      className="pill-btn outline"
+                      onClick={() => handleEdit(item)}
+                    >
                       <FontAwesomeIcon icon={faEdit} /> Edit
                     </button>
                   </div>
@@ -152,7 +173,20 @@ function View() {
       </div>
 
       {/* Floating Add Button */}
-      <button className="floating-add" onClick={() => setShowForm(true)}>
+      <button
+        className="floating-add"
+        onClick={() => {
+          setEditingId(null); // reset edit mode
+          setFormData({
+            id: Date.now(),
+            title: "",
+            url: "",
+            description: "",
+            favourite: false,
+          });
+          setShowForm(true);
+        }}
+      >
         <span className="plus">
           <FontAwesomeIcon icon={faPlus} />
         </span>
@@ -163,7 +197,7 @@ function View() {
       {showForm && (
         <div className="popup-overlay">
           <div className="popup-card">
-            <h2>Add Link</h2>
+            <h2>{editingId ? "Edit Link" : "Add Link"}</h2>
             <label>Title</label>
             <input
               type="text"

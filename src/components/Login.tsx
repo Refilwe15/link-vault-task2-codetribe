@@ -6,12 +6,7 @@ import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-interface Props {
-  label: string;
-  placeholder: string;
-}
-
-const Form: React.FC<Props> = () => {
+const Form: React.FC = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();

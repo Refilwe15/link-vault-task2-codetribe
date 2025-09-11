@@ -10,6 +10,7 @@ body{
     padding: 60px 100px 100px 100px;
     justify-content: center;
     align-items: center;
+    height : 100vh;
     width: 75%;
     margin: 0 auto;
 }
